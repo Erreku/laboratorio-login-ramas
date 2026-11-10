@@ -3,23 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login de demostración</title>
+  <meta name="description" content="Laboratorio de GitHub: formulario de acceso didáctico y adaptable.">
+  <title>Iniciar sesión | AulaDigital</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Primera versión del login que se mejorará con tres ramas. -->
-  <main class="login-card">
-    <h1>Login</h1>
-    <form id="loginForm" novalidate>
-      <input id="email" name="email" type="email" placeholder="Correo" aria-label="Correo electrónico" autocomplete="username">
-      <div class="password-row">
-        <input id="password" name="password" type="password" placeholder="Contraseña" aria-label="Contraseña" autocomplete="current-password">
-        <button id="togglePassword" type="button">Mostrar</button>
+  <main class="page-shell">
+    <section class="intro-panel" aria-labelledby="welcomeTitle">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>Aula<span class="brand-accent">Digital</span></span>
       </div>
-      <button class="submit-button" type="submit">Entrar</button>
-      <p id="formMessage" role="status" aria-live="polite"></p>
-    </form>
+      <div class="intro-content">
+        <span class="eyebrow">PLATAFORMA EDUCATIVA</span>
+        <h1 id="welcomeTitle">Tu espacio para <span>aprender y crecer.</span></h1>
+        <p>Accede de manera sencilla a tu espacio académico. Un proyecto de práctica para aprender desarrollo web y colaboración en GitHub.</p>
+        <ul class="features">
+          <li><span aria-hidden="true">✓</span> Interfaz clara y adaptable</li>
+          <li><span aria-hidden="true">✓</span> Validación del formulario</li>
+          <li><span aria-hidden="true">✓</span> Trabajo en equipo con ramas</li>
+        </ul>
+      </div>
+      <p class="intro-footer">Laboratorio TIC · Sesión 14</p>
+    </section>
+
+    <section class="form-panel" aria-labelledby="loginTitle">
+      <div class="login-card">
+        <div class="heading-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <p class="heading-kicker">BIENVENIDO DE NUEVO</p>
+        <h2 id="loginTitle">Iniciar sesión</h2>
+        <p class="login-description">Ingresa tus datos para continuar.</p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <div class="input-container">
+              <svg class="field-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+              <input id="email" name="email" type="email" placeholder="nombre@correo.com" inputmode="email" autocomplete="username" aria-describedby="emailError" required>
+            </div>
+            <p class="field-error" id="emailError" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <div class="input-container">
+              <svg class="field-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="current-password" aria-describedby="passwordError" required>
+              <button class="toggle-password" id="togglePassword" type="button" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button>
+            </div>
+            <p class="field-error" id="passwordError" aria-live="polite"></p>
+          </div>
+          <div class="options-row">
+            <label class="remember-label" for="rememberEmail"><input id="rememberEmail" type="checkbox"> <span>Recordar mi correo</span></label>
+            <a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="submit-button">Iniciar sesión <span aria-hidden="true">→</span></button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="demo-box">
+          <strong>Acceso de demostración</strong>
+          <span>Correo: demo@correo.com</span>
+          <span>Contraseña: demo12345</span>
+        </div>
+        <p class="disclaimer">Solo con fines académicos. No utiliza autenticación real.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
